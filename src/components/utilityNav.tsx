@@ -3,8 +3,8 @@ import { Button } from './ui/button';
 
 export const UtilityNav = () => {
   return (
-    <nav className="space-x-2">
-      <Button size="icon" variant="none">
+    <nav className="flex px-2">
+      <Button size="icon" variant="none" className="hidden xl:block">
         <User className="h-6 w-6 " />
       </Button>
       <Button size="icon" variant="none">

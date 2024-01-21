@@ -45,7 +45,7 @@ export const MainNav: React.FC<MainNavProps> = ({ data }) => {
   ];
 
   return (
-    <nav className="space-x-6">
+    <nav className="hidden space-x-6 px-2 xl:block">
       {mainRoutes.map((route) => (
         <Link key={route.href} href={route.href}>
           <Button
