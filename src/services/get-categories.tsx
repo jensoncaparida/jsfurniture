@@ -1,5 +1,3 @@
-import { Category } from '../../types/types';
-
 const url = `${process.env.NEXT_PUBLIC_STORE_API_URL}/categories`;
 
 const getCategories = async (): Promise<Category[]> => {
