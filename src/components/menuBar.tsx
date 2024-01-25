@@ -56,7 +56,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
       {isOpen && (
-        <div className="absolute left-0 z-50 mt-6 flex h-auto w-screen flex-col justify-center border-t bg-white p-2">
+        <div className="absolute left-0 z-50 mt-6 flex h-auto w-screen flex-col justify-center border-y bg-white p-2 shadow-sm">
           {mainRoutes.map((route) => (
             <Link
               key={route.href}

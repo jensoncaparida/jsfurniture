@@ -4,7 +4,7 @@ import { FeaturedBanners } from '@/components/featuredBanners';
 import { FeaturedCarousel } from '@/components/ui/featuredCarousel';
 
 export default async function Home() {
-  const products = await getProducts();
+  const products = await getProducts({});
 
   // featured collections
   const featuredProducts = products.filter((product) => product.isFeatured);

@@ -25,6 +25,7 @@ interface Product {
   isArchived: boolean;
   images: Images[];
   createdAt: string;
+  [key: string]: string;
 }
 
 interface Brand {
