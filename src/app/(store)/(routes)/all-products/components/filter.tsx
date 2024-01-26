@@ -11,14 +11,14 @@ interface FilterProps {
   valueKey: string;
   name: string;
   data: (Brand | Size | Color)[];
-  productsData: Product[];
+  products: Product[];
 }
 
 export const Filter: React.FC<FilterProps> = ({
   data,
   name,
   valueKey,
-  productsData,
+  products,
 }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -28,17 +28,16 @@ export const Filter: React.FC<FilterProps> = ({
   const selectedValues = searchParams.getAll(valueKey);
 
   const onClick = (id: string) => {
-    const current = selectedValues.slice();
-    if (current.includes(id)) {
-      current.splice(current.indexOf(id), 1);
-    } else {
-      current.push(id);
-    }
+    const current = qs.parse(searchParams.toString());
 
     const query = {
-      ...qs.parse(searchParams.toString()),
-      [valueKey]: current,
+      ...current,
+      [valueKey]: id,
     };
+
+    if (current[valueKey] === id) {
+      query[valueKey] = null;
+    }
 
     const url = qs.stringifyUrl(
       {
@@ -52,8 +51,7 @@ export const Filter: React.FC<FilterProps> = ({
   };
 
   const countProducts = (id: string) => {
-    return productsData.filter((product: any) => product[valueKey] === id)
-      .length;
+    return products.filter((product: any) => product[valueKey] === id).length;
   };
 
   return (

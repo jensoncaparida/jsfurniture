@@ -5,7 +5,7 @@ import getColors from '@/services/get-color';
 
 import { Container } from '@/components/ui/container';
 import { Banner } from '@/components/ui/banner';
-import { Filter } from './components/filterOption';
+import { Filter } from './components/filter';
 
 interface AllProductsProps {
   searchParams: {
@@ -36,24 +36,25 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
           <div>Sort by</div>
         </div>
       </Container>
+      {/* filter */}
       <Container>
         <Filter
           valueKey="brandId"
           name="Brands"
           data={brands}
-          productsData={products}
+          products={products}
         />
         <Filter
           valueKey="sizeId"
           name="Sizes"
           data={sizes}
-          productsData={products}
+          products={products}
         />
         <Filter
           valueKey="colorId"
           name="Colors"
           data={colors}
-          productsData={products}
+          products={products}
         />
       </Container>
     </main>
