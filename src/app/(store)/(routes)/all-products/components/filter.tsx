@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import qs from 'query-string';
+import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 import { Checkbox } from '@/components/ui/checkbox';
+
+import { cn } from '@/lib/utils';
 
 interface FilterProps {
   valueKey: string;
@@ -50,21 +52,19 @@ export const Filter: React.FC<FilterProps> = ({
     router.push(url);
   };
 
+  // products count for each filter
   const countProducts = (id: string) => {
     return products.filter((product: any) => product[valueKey] === id).length;
   };
 
   return (
     <>
-      <div className="mb-8 hidden w-[280px] pr-4 lg:block">
+      <div className="mb-4">
         <div
           onClick={() => setIsOpen(!isOpen)}
           className="mb-4 flex cursor-pointer items-center"
         >
-          <ChevronRight
-            style={{ transform: isOpen ? 'rotate(90deg)' : 'none' }}
-            className="mr-2 h-4 w-4"
-          />
+          <ChevronRight className={cn('mr-2 h-4 w-4', isOpen && 'rotate-90')} />
           <h5 className="text-sm font-semibold uppercase">{name}</h5>
         </div>
         {isOpen && (

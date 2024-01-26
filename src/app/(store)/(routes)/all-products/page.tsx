@@ -6,6 +6,7 @@ import getColors from '@/services/get-color';
 import { Container } from '@/components/ui/container';
 import { Banner } from '@/components/ui/banner';
 import { Filter } from './components/filter';
+import { FilterList } from './components/filterList';
 
 interface AllProductsProps {
   searchParams: {
@@ -36,26 +37,36 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
           <div>Sort by</div>
         </div>
       </Container>
-      {/* filter */}
       <Container>
-        <Filter
-          valueKey="brandId"
-          name="Brands"
-          data={brands}
-          products={products}
-        />
-        <Filter
-          valueKey="sizeId"
-          name="Sizes"
-          data={sizes}
-          products={products}
-        />
-        <Filter
-          valueKey="colorId"
-          name="Colors"
-          data={colors}
-          products={products}
-        />
+        <div>
+          {/* filter */}
+          <div className="hidden w-[280px] pr-4 lg:block">
+            <FilterList
+              valueKeys={['brandId', 'sizeId', 'colorId']}
+              brands={brands}
+              sizes={sizes}
+              colors={colors}
+            />
+            <Filter
+              valueKey="brandId"
+              name="Brands"
+              data={brands}
+              products={products}
+            />
+            <Filter
+              valueKey="sizeId"
+              name="Sizes"
+              data={sizes}
+              products={products}
+            />
+            <Filter
+              valueKey="colorId"
+              name="Colors"
+              data={colors}
+              products={products}
+            />
+          </div>
+        </div>
       </Container>
     </main>
   );
