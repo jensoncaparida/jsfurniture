@@ -8,6 +8,8 @@ import { Banner } from '@/components/ui/banner';
 import { Filter } from './components/filter';
 import { FilterList } from './components/filterList';
 import { MobileFilter } from './components/mobileFilter';
+import { ProductCard } from '@/components/ui/productCard';
+import { NoResults } from '@/components/ui/noResults';
 
 interface AllProductsProps {
   searchParams: {
@@ -48,9 +50,9 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
         </div>
       </Container>
       <Container>
-        <div>
+        <div className="flex space-x-4">
           {/* filter */}
-          <div className="hidden w-[280px] pr-4 lg:block">
+          <div className="hidden min-w-[280px] pr-4 lg:block">
             <FilterList
               valueKeys={['brandId', 'sizeId', 'colorId']}
               brands={brands}
@@ -75,6 +77,17 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
               data={colors}
               products={products}
             />
+          </div>
+          <div className="h-auto w-full">
+            {products && products.length > 0 ? (
+              <div className="mb-4 grid grid-cols-2 gap-4 md:grid-cols-3">
+                {products.map((item) => (
+                  <ProductCard key={item.id} data={item} />
+                ))}
+              </div>
+            ) : (
+              <NoResults />
+            )}
           </div>
         </div>
       </Container>

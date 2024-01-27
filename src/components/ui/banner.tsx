@@ -15,6 +15,7 @@ export const Banner: React.FC<BannerProps> = ({ title, imageUrl }) => {
           src={imageUrl}
           alt="All products banner"
           fill
+          sizes="(min-width: 1024px) 280px, (min-width: 768px) 240px, (min-width: 640px) 200px, 100vw"
           style={{
             objectFit: 'cover',
           }}

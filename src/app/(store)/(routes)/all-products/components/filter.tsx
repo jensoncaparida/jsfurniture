@@ -75,8 +75,31 @@ export const Filter: React.FC<FilterProps> = ({
             className={cn('lock h-4 w-4 lg:hidden', !isOpen && 'rotate-90')}
           />
         </div>
+        {isOpen && (
+          <div className="hidden max-h-[240px] flex-col space-y-2 overflow-y-auto pl-2 lg:flex">
+            {data.map((filter) => (
+              <label
+                key={filter.id}
+                htmlFor={filter.id}
+                className="flex cursor-pointer items-center justify-between"
+              >
+                <div className="flex items-center ">
+                  <Checkbox
+                    id={filter.id}
+                    checked={selectedValues.includes(filter.id)}
+                    onCheckedChange={() => onClick(filter.id)}
+                    className="border-gray-400"
+                  />
+                  <span className="ml-2 font-medium">{filter.name}</span>
+                </div>
+                ({countProducts(filter.id)})
+              </label>
+            ))}
+          </div>
+        )}
+        {/* mobile layout filter */}
         {!isOpen && (
-          <div className="flex max-h-[240px] flex-col space-y-2 overflow-y-auto pl-2">
+          <div className="flex max-h-[240px] flex-col space-y-2 overflow-y-auto pl-2 lg:hidden">
             {data.map((filter) => (
               <label
                 key={filter.id}
