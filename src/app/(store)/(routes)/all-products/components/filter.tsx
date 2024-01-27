@@ -62,12 +62,20 @@ export const Filter: React.FC<FilterProps> = ({
       <div className="mb-4">
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className="mb-4 flex cursor-pointer items-center"
+          className="mb-4 flex cursor-pointer items-center justify-between lg:justify-normal"
         >
-          <ChevronRight className={cn('mr-2 h-4 w-4', isOpen && 'rotate-90')} />
+          <ChevronRight
+            className={cn(
+              'mr-2 hidden h-4 w-4 lg:block',
+              isOpen && 'rotate-90',
+            )}
+          />
           <h5 className="text-sm font-semibold uppercase">{name}</h5>
+          <ChevronRight
+            className={cn('lock h-4 w-4 lg:hidden', !isOpen && 'rotate-90')}
+          />
         </div>
-        {isOpen && (
+        {!isOpen && (
           <div className="flex max-h-[240px] flex-col space-y-2 overflow-y-auto pl-2">
             {data.map((filter) => (
               <label

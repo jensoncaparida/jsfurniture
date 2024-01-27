@@ -85,9 +85,14 @@ export const FilterList: React.FC<FilterListProps> = ({
   return (
     <>
       {hasSelectedFilters && (
-        <div className="mb-4">
+        <div className="mb-4 p-2">
           <div className="mb-4 flex items-center justify-between">
-            <h5 className="text-sm font-semibold uppercase">FILTERED BY</h5>
+            <h5 className="hidden text-sm font-semibold uppercase lg:block">
+              FILTERED BY
+            </h5>
+            <h5 className="block text-sm font-semibold uppercase lg:hidden">
+              SELECTED FILTERS
+            </h5>
             <button onClick={clearAllFilters} className="text-xs">
               Clear All
             </button>
@@ -112,7 +117,7 @@ export const FilterList: React.FC<FilterListProps> = ({
               ) : null;
             })}
           </div>
-          <Separator />
+          <Separator className="hidden lg:block" />
         </div>
       )}
     </>

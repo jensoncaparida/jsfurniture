@@ -62,6 +62,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
               key={route.href}
               href={route.href}
               className={`${route.active ? 'text-[#055A5B]' : ''} p-2 hover:bg-accent`}
+              onClick={() => setIsOpen(false)}
             >
               {route.label}
             </Link>
@@ -71,6 +72,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
               key={route.href}
               href={route.href}
               className="p-2 hover:bg-accent"
+              onClick={() => setIsOpen(false)}
             >
               {route.label}
             </Link>
@@ -80,6 +82,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
               key={route.href}
               href={route.href}
               className="p-2 hover:bg-accent"
+              onClick={() => setIsOpen(false)}
             >
               {route.label}
             </Link>
