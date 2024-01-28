@@ -11,6 +11,7 @@ import { FilterList } from './components/filterList';
 import { MobileFilter } from './components/mobileFilter';
 import { ViewFilter } from './components/view';
 import { ProductList } from './components/productList';
+import { Sort } from './components/sort';
 
 interface AllProductsProps {
   searchParams: {
@@ -37,6 +38,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
       {/* top options mobile */}
       <div className="block overflow-y-auto lg:hidden">
         <div className="flex flex-row">
+          <Sort />
           <MobileFilter
             brands={brands}
             sizes={sizes}
@@ -56,7 +58,9 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
             <span>View as</span> <ViewFilter />
           </div>
           <span>{products.length} Products</span>
-          <div>Sort by</div>
+          <div className="flex items-center space-x-4">
+            <span>SORT BY:</span> <Sort />
+          </div>
         </div>
       </Container>
       <Container>
