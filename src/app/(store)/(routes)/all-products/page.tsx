@@ -5,11 +5,12 @@ import getColors from '@/services/get-color';
 
 import { Container } from '@/components/ui/container';
 import { Banner } from '@/components/ui/banner';
+
 import { Filter } from './components/filter';
 import { FilterList } from './components/filterList';
 import { MobileFilter } from './components/mobileFilter';
-import { ProductCard } from '@/components/ui/productCard';
-import { NoResults } from '@/components/ui/noResults';
+import { ViewFilter } from './components/view';
+import { ProductList } from './components/productList';
 
 interface AllProductsProps {
   searchParams: {
@@ -33,18 +34,27 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
   return (
     <main>
       <Banner title="All Products" imageUrl="/all-products-banner.jpg" />
-      {/* top options */}
-      <div className="flex flex-row overflow-y-auto lg:hidden">
-        <MobileFilter
-          brands={brands}
-          sizes={sizes}
-          colors={colors}
-          products={products}
-        />
+      {/* top options mobile */}
+      <div className="block overflow-y-auto lg:hidden">
+        <div className="flex flex-row">
+          <MobileFilter
+            brands={brands}
+            sizes={sizes}
+            colors={colors}
+            products={products}
+          />
+        </div>
+        <div className="flex items-center justify-between p-4">
+          <span>{products.length} Products</span>
+          <ViewFilter />
+        </div>
       </div>
+      {/* top options desktop */}
       <Container>
         <div className="hidden items-center justify-between py-5 lg:flex">
-          <div>View as</div>
+          <div className="flex items-center space-x-4">
+            <span>View as</span> <ViewFilter />
+          </div>
           <span>{products.length} Products</span>
           <div>Sort by</div>
         </div>
@@ -78,17 +88,7 @@ export default async function AllProducts({ searchParams }: AllProductsProps) {
               products={products}
             />
           </div>
-          <div className="h-auto w-full">
-            {products && products.length > 0 ? (
-              <div className="mb-4 grid grid-cols-2 gap-4 md:grid-cols-3">
-                {products.map((item) => (
-                  <ProductCard key={item.id} data={item} />
-                ))}
-              </div>
-            ) : (
-              <NoResults />
-            )}
-          </div>
+          <ProductList data={products} />
         </div>
       </Container>
     </main>
