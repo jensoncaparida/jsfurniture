@@ -19,8 +19,8 @@ interface Product {
   discount: number;
   category: Category;
   brand: Brand;
-  sizes: Size;
-  colors: Color;
+  size: Size;
+  color: Color;
   isFeatured: boolean;
   isArchived: boolean;
   images: Images[];
@@ -48,4 +48,5 @@ interface Color {
 interface Images {
   id: string;
   url: string;
+  createdAt: string;
 }
