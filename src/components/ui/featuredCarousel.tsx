@@ -74,13 +74,13 @@ export const FeaturedCarousel: React.FC<FeaturedCarouselProps> = ({
                   className="group flex basis-1/2 cursor-pointer flex-col items-center transition-all md:basis-1/3 lg:basis-1/4"
                 >
                   <Link href={`/products/${product.id}`}>
-                    <div className="relative h-auto w-full overflow-hidden">
+                    <div className="relative aspect-square h-auto w-full overflow-hidden">
                       <Image
                         src={product.images?.[0].url}
                         alt={`${product.name}-image`}
                         width={400}
                         height={400}
-                        className="object-contain duration-500 group-hover:scale-105 "
+                        className="aspect-square object-contain object-center duration-500 group-hover:scale-105 "
                       />
                     </div>
                     <div className="text-center">

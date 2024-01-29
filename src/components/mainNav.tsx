@@ -26,9 +26,9 @@ export const MainNav: React.FC<MainNavProps> = ({ data }) => {
   ];
 
   const categoryRoutes = data.map((route) => ({
-    href: `/category/${route.id}`,
+    href: `/product-category/${route.id}`,
     label: route.name,
-    active: pathname === `/category/${route.id}`,
+    active: pathname === `/product-category/${route.id}`,
   }));
 
   const infoRoutes = [

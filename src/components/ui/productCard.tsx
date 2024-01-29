@@ -22,7 +22,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
             alt="product image"
             width={400}
             height={400}
-            className="aspect-square rounded-md object-cover duration-500 group-hover:scale-105"
+            className="aspect-square rounded-md object-contain object-center duration-500 group-hover:scale-105"
           />
         </div>
         <div className="p-2 text-left">
