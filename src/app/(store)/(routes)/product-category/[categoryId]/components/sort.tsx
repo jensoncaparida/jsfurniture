@@ -52,7 +52,7 @@ export const Sort = () => {
     <>
       <Select onValueChange={onChange}>
         <SelectTrigger className="h-auto w-full rounded-none shadow-none focus:ring-0 lg:h-[32px] lg:w-[180px] lg:rounded-md">
-          <SelectValue placeholder="Newest" />
+          <SelectValue placeholder="SORT BY" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>

@@ -35,7 +35,7 @@ export const MobileFilter: React.FC<MobileFilterProps> = ({
         <SheetTrigger className="flex w-full items-center justify-between border p-2 uppercase">
           FILTERED BY <SlidersHorizontal size={16} />
         </SheetTrigger>
-        <SheetContent className="block max-w-[80%] overflow-y-auto  border-0 p-0 lg:hidden">
+        <SheetContent className="block w-[85%] border-0 p-0 md:w-[60%] lg:hidden">
           <SheetClose className="absolute -left-9 top-0 bg-white p-2">
             <X size={16} />
           </SheetClose>
@@ -49,7 +49,7 @@ export const MobileFilter: React.FC<MobileFilterProps> = ({
               colors={colors}
             />
           </SheetHeader>
-          <div className="p-4">
+          <div className="h-[90%] overflow-y-auto p-4">
             <Filter
               valueKey="brandId"
               name="Brands"
@@ -69,11 +69,13 @@ export const MobileFilter: React.FC<MobileFilterProps> = ({
               products={products}
             />
           </div>
-          <SheetFooter className="fixed bottom-0 w-[80%] bg-[#055A5B] p-4 sm:max-w-sm">
-            <SheetClose className="text-center text-white">
-              Show results ({products.length})
-            </SheetClose>
-          </SheetFooter>
+          <SheetClose>
+            <SheetFooter className="absolute bottom-0 w-full bg-[#055A5B] p-4">
+              <p className="text-center text-white">
+                Show results ({products.length})
+              </p>
+            </SheetFooter>
+          </SheetClose>
         </SheetContent>
       </Sheet>
     </>

@@ -30,7 +30,7 @@ export const Gallery: React.FC<GalleryProps> = ({ images = [] }) => {
                 fill
                 sizes="(min-width: 1024px) 500px, 100vw"
                 priority
-                className="object-cover object-center"
+                className="object-contain object-center"
               />
             </div>
           </Tab.Panel>
