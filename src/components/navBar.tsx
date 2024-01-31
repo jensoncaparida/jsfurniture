@@ -6,9 +6,11 @@ import { UtilityNav } from '@/components/utilityNav';
 import { MenuBar } from '@/components/menuBar';
 
 import getCategories from '@/services/get-categories';
+import getProducts from '@/services/get-products';
 
 export const NavBar = async () => {
   const categories = await getCategories();
+  const products = await getProducts({});
 
   return (
     <div className="flex h-[90px] w-full flex-row items-center justify-between border-b px-4 lg:px-10">
@@ -17,7 +19,7 @@ export const NavBar = async () => {
         <Image alt="logo" width={190} height={56} src="/logo.svg" />
       </Link>
       <MainNav data={categories} />
-      <UtilityNav />
+      <UtilityNav data={products} />
     </div>
   );
 };
