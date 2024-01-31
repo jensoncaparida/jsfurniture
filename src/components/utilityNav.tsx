@@ -5,7 +5,7 @@ import { User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Search } from '@/components/ui/search';
 
-import { Cart } from './cart';
+import { Cart } from '@/components/ui/cart';
 
 interface UtilityNavProps {
   data: Product[];

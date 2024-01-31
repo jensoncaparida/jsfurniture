@@ -1,9 +1,9 @@
 import getProduct from '@/services/get-product';
 
+import { Actions } from './components/actions';
 import { ProductDetails } from './components/productDetails';
 import { Gallery } from '@/components/gallery';
 import { Container } from '@/components/ui/container';
-import { Actions } from './components/actions';
 
 interface ProductPageProps {
   params: {
