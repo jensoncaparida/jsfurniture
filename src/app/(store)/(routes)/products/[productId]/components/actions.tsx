@@ -19,7 +19,7 @@ export const Actions: React.FC<ActionsProps> = ({ data }) => {
     <>
       <Button
         onClick={addToCart}
-        className="w-full max-w-[200px] border-black font-semibold uppercase hover:bg-black hover:text-white"
+        className="w-full max-w-[200px] border-black py-6 font-semibold uppercase hover:bg-black hover:text-white"
         variant="outline"
       >
         ADD TO CART
