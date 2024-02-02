@@ -81,13 +81,13 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
             <Link
               key={route.href}
               href={route.href}
-              className="p-2 hover:bg-accent"
+              className="p-2 line-through hover:bg-accent"
               onClick={() => setIsOpen(false)}
             >
               {route.label}
             </Link>
           ))}
-          <Link href="/" className="p-2 hover:bg-accent">
+          <Link href="/" className="p-2 line-through hover:bg-accent">
             Account
           </Link>
         </div>

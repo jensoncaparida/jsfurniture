@@ -9,7 +9,7 @@ export const EmptyCart = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center space-y-8 py-16">
+      <div className="flex flex-col items-center justify-center space-y-8 py-32">
         <h1
           className="text-4xl font-medium"
           style={{

@@ -14,7 +14,11 @@ interface UtilityNavProps {
 export const UtilityNav: React.FC<UtilityNavProps> = ({ data }) => {
   return (
     <nav className="flex items-center px-2">
-      <Button size="icon" variant="none" className="hidden xl:flex">
+      <Button
+        size="icon"
+        variant="none"
+        className="hidden cursor-not-allowed text-muted-foreground xl:flex"
+      >
         <User className="h-6 w-6 " />
       </Button>
       <Search data={data} />

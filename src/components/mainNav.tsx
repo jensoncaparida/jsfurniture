@@ -70,7 +70,7 @@ export const MainNav: React.FC<MainNavProps> = ({ data }) => {
         <Link key={route.href} href={route.href}>
           <Button
             variant="link"
-            className={`${route.active ? 'underline underline-offset-8' : ''}link-button p-0 font-semibold uppercase underline-offset-8`}
+            className={`${route.active ? 'underline underline-offset-8' : ''}link-button p-0 font-semibold uppercase line-through underline-offset-8`}
           >
             {route.label}
           </Button>

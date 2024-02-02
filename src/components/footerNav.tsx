@@ -71,7 +71,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({ data }) => {
         <Link key={route.href} href={route.href}>
           <Button
             variant="link"
-            className={`${route.active ? 'underline underline-offset-8' : ''} link-button p-0 capitalize text-white underline-offset-8`}
+            className={`${route.active ? 'underline underline-offset-8' : ''} link-button p-0 capitalize text-white line-through underline-offset-8`}
           >
             {route.label}
           </Button>
