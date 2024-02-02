@@ -16,7 +16,13 @@ export const NavBar = async () => {
     <div className="flex h-[90px] w-full flex-row items-center justify-between border-b px-4 lg:px-10">
       <MenuBar data={categories} />
       <Link href="/">
-        <Image alt="logo" width={190} height={56} src="/logo.svg" />
+        <Image
+          alt="logo"
+          width={190}
+          height={56}
+          src="/logo.svg"
+          className="h-auto w-auto"
+        />
       </Link>
       <MainNav data={categories} />
       <UtilityNav data={products} />
