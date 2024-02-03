@@ -25,7 +25,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <div className="flex h-[250px] w-full flex-col items-center justify-center space-y-4 bg-gray-100 px-4">
         <p className="text-medium">
           Search results for{' '}
-          <span className="font-semibold italic">"{searchParams.term}"</span>
+          <span className="font-semibold italic">
+            &quot;{searchParams.term}&quot;
+          </span>
         </p>
         <SearchBar />
       </div>
