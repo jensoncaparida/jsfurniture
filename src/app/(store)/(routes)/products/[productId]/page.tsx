@@ -12,7 +12,12 @@ interface ProductPageProps {
 }
 
 export default async function Product({ params }: ProductPageProps) {
-  const product = await getProduct(params.productId);
+  let product;
+
+  // Add a delay before fetching the product
+  await new Promise((resolve) => setTimeout(resolve, 2000)); // 2000 ms = 2 seconds
+
+  product = await getProduct(params.productId);
 
   if (!product) {
     return null;
