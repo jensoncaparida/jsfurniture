@@ -77,7 +77,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
               {route.label}
             </Link>
           ))}
-          {infoRoutes.map((route) => (
+          {/* {infoRoutes.map((route) => (
             <Link
               key={route.href}
               href={route.href}
@@ -86,10 +86,10 @@ export const MenuBar: React.FC<MenuBarProps> = ({ data }) => {
             >
               {route.label}
             </Link>
-          ))}
-          <Link href="/" className="p-2 line-through hover:bg-accent">
+          ))} */}
+          {/* <Link href="/" className="p-2 line-through hover:bg-accent">
             Account
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>

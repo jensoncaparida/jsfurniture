@@ -67,7 +67,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({ data }) => {
           </Button>
         </Link>
       ))}
-      {infoRoutes.map((route) => (
+      {/* {infoRoutes.map((route) => (
         <Link key={route.href} href={route.href}>
           <Button
             variant="link"
@@ -76,7 +76,7 @@ export const FooterNav: React.FC<FooterNavProps> = ({ data }) => {
             {route.label}
           </Button>
         </Link>
-      ))}
+      ))} */}
     </nav>
   );
 };
